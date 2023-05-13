@@ -25,5 +25,5 @@ jobs:
     - name: Run 
       run: |
         #python ./checkin.py '''${{secrets.SOCLOUD_COOKIE}}'''
-        echo '''${{secrets.SOCLOUD_COOKIE}}'''
+        echo ${{secrets.SOCLOUD_COOKIE}}
     - uses: gautamkrishnar/keepalive-workflow@master
