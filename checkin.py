@@ -86,7 +86,6 @@ def socloud(cookie_string):
     else:
         element.click()
         print('进行签到')
-        element.clear()
         time.sleep(3)
         element = driver.find_element(By.XPATH, '//*[@id="checkin-div"]/a')
         if element.text == '明日再来':
