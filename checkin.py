@@ -91,5 +91,5 @@ if __name__ == "__main__":
     cookie_string = "'" + sys.argv[1] + "'"
     assert cookie_string
     
-    # print('\n' + cookie_string)
-    socloud(cookie_string)
+    print('\n' + cookie_string)
+    # socloud(cookie_string)
