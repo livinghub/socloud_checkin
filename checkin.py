@@ -36,6 +36,9 @@ def socloud(cookie_string):
 
     # 获取驱动版本
     version = get_driver_version()
+    print(version)
+
+    '''
     # 创建驱动
     driver = uc.Chrome(version_main=version, options=options)
 
@@ -83,6 +86,7 @@ def socloud(cookie_string):
 
     # 退出
     driver.close()
+    '''
 
 
 if __name__ == "__main__":
