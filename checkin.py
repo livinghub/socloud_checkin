@@ -28,6 +28,13 @@ def get_driver_version():
     return out
 
 def socloud(cookie_string):
+    # 处理 cookie_string 
+    # cookie_string = r"'''" + cookie_string + r"'''"
+
+    # 检测cookie_string是否异常
+    print('\n' + cookie_string + '\n')
+    # return
+
     # 设置驱动选项
     options = uc.ChromeOptions()
     # options.add_argument('--proxy-server=socks5://127.0.0.1:10088')
@@ -88,8 +95,8 @@ def socloud(cookie_string):
 
 
 if __name__ == "__main__":
-    cookie_string = "'" + sys.argv[1] + "'"
+    cookie_string = sys.argv[1]
     assert cookie_string
     
-    print('\n' + cookie_string)
-    # socloud(cookie_string)
+    # print('\n' + cookie_string )
+    socloud(cookie_string)
