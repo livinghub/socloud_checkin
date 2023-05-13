@@ -39,7 +39,7 @@ def socloud(cookie_string):
     
     # 创建驱动
     driver = uc.Chrome(version_main=version, options=options)
-    '''
+    
     # 记得写完整的url 包括http和https
     driver.get('https://socloud.me/user##')
 
@@ -84,7 +84,7 @@ def socloud(cookie_string):
 
     # 退出
     driver.close()
-    '''
+    
 
 
 if __name__ == "__main__":
