@@ -5,6 +5,7 @@ import time
 import sys
 import platform
 import subprocess
+import base64
 
 def get_driver_version():
     system = platform.system()
@@ -95,8 +96,22 @@ def socloud(cookie_string):
 
 
 if __name__ == "__main__":
-    cookie_string = sys.argv[1]
-    assert cookie_string
+    b64str = sys.argv[1]
+    assert b64str
     
-    # print('\n' + cookie_string )
+    # # 编码
+    # message = "Hello, World!"
+    # message_bytes = message.encode()
+    # base64_bytes = base64.b64encode(message_bytes)
+    # base64_message = base64_bytes.decode()
+    # print(base64_message)
+
+    # 解码
+    base64_message = b64str
+    base64_bytes = base64_message.encode()
+    message_bytes = base64.b64decode(base64_bytes)
+    cookie_string = message_bytes.decode()
+    # print(cookie_string)
+
+    # print('\n' + b64decode )
     socloud(cookie_string)
