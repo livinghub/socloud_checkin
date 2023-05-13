@@ -1,3 +1,5 @@
+# encoding=utf8
+
 import undetected_chromedriver as uc
 import json
 from selenium.webdriver.common.by import By
@@ -6,6 +8,8 @@ import sys
 import platform
 import subprocess
 import base64
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 
 def get_driver_version():
     system = platform.system()
