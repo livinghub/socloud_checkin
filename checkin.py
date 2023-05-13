@@ -30,7 +30,7 @@ def get_driver_version():
 def socloud(cookie_string):
     # 设置驱动选项
     options = uc.ChromeOptions()
-    # options.add_argument('--proxy-server=socks5://127.0.0.1:10088')
+    options.add_argument('--proxy-server=socks5://127.0.0.1:10088')
     options.add_argument("--disable-popup-blocking")
 
     # 获取驱动版本
