@@ -14,17 +14,17 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      echo '${{secrets.SOCLOUD_COOKIE}}'
-#     - uses: actions/checkout@v3
-#     - uses: actions/setup-python@v4
-#       with:
-#         python-version: '3.11'
-#         cache: 'pip' # caching pip dependencies
+#       echo ${{secrets.SOCLOUD_COOKIE}}
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip' # caching pip dependencies
 #     - name: Install requirements
 #       run: |
 #         pip install -r ./requirements.txt
-#     - name: Run 
-#       run: |
-#         python ./checkin.py ${{secrets.SOCLOUD_COOKIE}}
+    - name: Run 
+      run: |
+        python ./checkin.py ${{secrets.SOCLOUD_COOKIE}}
     
-#     - uses: gautamkrishnar/keepalive-workflow@master
+    - uses: gautamkrishnar/keepalive-workflow@master
