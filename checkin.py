@@ -8,7 +8,6 @@ import subprocess
 
 def get_driver_version():
     system = platform.system()
-    print(system)
     if system == "Linux":
         cmd = r'google-chrome --version'
     elif system == "Darwin":
@@ -25,7 +24,7 @@ def get_driver_version():
         out = out.decode("utf-8").split(" ")[2].split(".")[0]
     elif system == "Windows":
         out = out.decode("utf-8").split(".")[0]
-    print(out)
+    # print(out)
     return out
 
 def socloud(cookie_string):
@@ -36,12 +35,11 @@ def socloud(cookie_string):
 
     # 获取驱动版本
     version = get_driver_version()
-    print(version)
 
-    '''
+    
     # 创建驱动
     driver = uc.Chrome(version_main=version, options=options)
-
+    '''
     # 记得写完整的url 包括http和https
     driver.get('https://socloud.me/user##')
 
