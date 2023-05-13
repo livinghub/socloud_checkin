@@ -8,6 +8,7 @@ import subprocess
 
 def get_driver_version():
     system = platform.system()
+    print(system)
     if system == "Linux":
         cmd = r'google-chrome --version'
     elif system == "Darwin":
@@ -24,7 +25,7 @@ def get_driver_version():
         out = out.decode("utf-8").split(" ")[2].split(".")[0]
     elif system == "Windows":
         out = out.decode("utf-8").split(".")[0]
-    # print(out)
+    print(out)
     return out
 
 def socloud(cookie_string):
