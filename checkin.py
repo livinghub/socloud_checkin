@@ -59,8 +59,7 @@ def socloud(cookie_string):
     #         driver.add_cookie(cookie)
 
     # 读取及载入cookie
-    # cookies_list = json.loads(cookie_string)
-    cookies_list = cookie_string
+    cookies_list = json.loads(cookie_string)
     for cookie in cookies_list:
         driver.add_cookie(cookie)
 
