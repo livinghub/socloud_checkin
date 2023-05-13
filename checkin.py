@@ -33,7 +33,7 @@ def socloud(cookie_string):
 
     # 检测cookie_string是否异常
     print('\n' + cookie_string + '\n')
-    # return
+    return
 
     # 设置驱动选项
     options = uc.ChromeOptions()
