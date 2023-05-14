@@ -93,8 +93,10 @@ def socloud(cookie_string):
 
 
 if __name__ == "__main__":
-    b64str = sys.argv[1]
-    assert b64str
+    jsonStr = sys.argv[1]
+    assert jsonStr
+
+    print(jsonStr)
     
     # # 编码
     # message = "Hello, World!"
@@ -104,10 +106,10 @@ if __name__ == "__main__":
     # print(base64_message)
 
     # 解码
-    base64_message = b64str
-    base64_bytes = base64_message.encode()
-    message_bytes = base64.b64decode(base64_bytes)
-    cookie_string = message_bytes.decode()
+    # base64_message = b64str
+    # base64_bytes = base64_message.encode()
+    # message_bytes = base64.b64decode(base64_bytes)
+    # cookie_string = message_bytes.decode()
     # print(cookie_string)
 
-    socloud(cookie_string)
+    # socloud(cookie_string)
