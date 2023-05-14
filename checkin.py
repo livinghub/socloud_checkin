@@ -96,7 +96,7 @@ if __name__ == "__main__":
     jsonStr = sys.argv[1]
     assert jsonStr
 
-    print(jsonStr)
+    print('*'+jsonStr+'*')
     
     # # 编码
     # message = "Hello, World!"
