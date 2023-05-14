@@ -1,4 +1,4 @@
-name: socloud
+name: Actions_test
 
 on:
   # schedule:
