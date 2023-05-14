@@ -1,4 +1,4 @@
-name: Actions_test
+name: actionsTest
 
 on:
   # schedule:
