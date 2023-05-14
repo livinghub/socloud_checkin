@@ -13,7 +13,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 
 def get_driver_version():
     system = platform.system()
-    if system == "Linux":
+    if system == "Linux": # github actions linux 系统没有图形化界面，该选项不能直接用
         cmd = r'google-chrome --version'
     elif system == "Darwin":
         cmd = r'''/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version'''
@@ -33,13 +33,6 @@ def get_driver_version():
     return out
 
 def socloud(cookie_string):
-    # 处理 cookie_string 
-    # cookie_string = r"'''" + cookie_string + r"'''"
-
-    # 检测cookie_string是否异常
-    # print('\n' + cookie_string + '\n')
-    # return
-
     # 设置驱动选项
     options = uc.ChromeOptions()
     # options.add_argument('--proxy-server=socks5://127.0.0.1:10088')
@@ -116,5 +109,4 @@ if __name__ == "__main__":
     cookie_string = message_bytes.decode()
     # print(cookie_string)
 
-    # print('\n' + b64decode )
     socloud(cookie_string)
