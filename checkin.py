@@ -88,6 +88,7 @@ def socloud(cookie_string):
 
     # 退出
     driver.close()
+    driver.quit()
     
 
 
