@@ -5,9 +5,9 @@ on:
   # - cron: "0 1 * * *"
   
   push:
-    branches: [ main ]
+    branches: [actions_secrets_test]
   pull_request:
-    branches: [ main ]
+    branches: [actions_secrets_test]
   
   workflow_dispatch:
 
