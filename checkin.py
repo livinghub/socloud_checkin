@@ -76,7 +76,7 @@ def socloud(cookie_string):
     # print(element.text)
     if element.text == '明日再来':
         print('明日再来, 今天已签到')
-    else:
+    elif element.text == '每日签到':
         element.click()
         print('进行签到')
         time.sleep(3)
