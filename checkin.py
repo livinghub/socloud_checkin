@@ -3,6 +3,7 @@
 import undetected_chromedriver as uc
 import json
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 import time
 import sys
 import platform
@@ -70,6 +71,11 @@ def socloud(cookie_string):
 
     # 刷新网页
     driver.refresh()
+
+    # 等待首页出现
+    WebDriverWait(driver, 240).until(
+        lambda x: x.title != "登录 — SoCloud"
+    )
 
     # 检测签到情况
     element = driver.find_element(By.XPATH, '//*[@id="checkin-div"]/a')
