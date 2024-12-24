@@ -31,7 +31,7 @@ def get_driver_version():
     elif system == "Windows":
         out = out.decode("utf-8").split(".")[0]
     # print(out)
-    return out
+    return int(out)
 
 def socloud(cookie_string):
     # 设置驱动选项
