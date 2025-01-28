@@ -25,7 +25,7 @@ def get_driver_version():
     elif system == "Windows":
         out = out.decode("utf-8").split(".")[0]
     # print(out)
-    return out
+    return int(out)
 
 # 填写webdriver的保存目
 options = uc.ChromeOptions()
