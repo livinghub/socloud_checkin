@@ -53,22 +53,21 @@ def socloud(cookie_string):
     # 首先清除由于浏览器打开已有的
     driver.delete_all_cookies()
 
-    # 读取cookie
-    # with open('cookies.txt','r') as f:
-    #     # 使用json读取cookies 注意读取的是文件 所以用load而不是loads
-    #     cookies_list = json.load(f)
-
-    #     #方法2删除该字段
-    #     for cookie in cookies_list:
-    #         # 该字段有问题所以删除就可以 
-    #         # if 'expiry' in cookie:
-    #         #     del cookie['expiry']
-    #         driver.add_cookie(cookie)
-
     # 读取及载入cookie
-    cookies_list = json.loads(cookie_string)
-    for cookie in cookies_list:
-        driver.add_cookie(cookie)
+    if cookie_string.startswith("cookie:"):
+        cookie_string = cookie_string[len("cookie:"):]
+    cookie_string = cookie_string.replace("/","%2")
+    cookie_dict = [ 
+        {"name" : x.split('=')[0].strip(), "value": x.split('=')[1].strip()} 
+        for x in cookie_string.split(';')
+    ]
+    for cookie in cookie_dict:
+        driver.add_cookie({
+            "domain": "socloud.me", # need to change
+            "name": cookie["name"],
+            "value": cookie["value"],
+            "path": "/",
+        })
 
     # 刷新网页
     driver.refresh()
@@ -100,21 +99,7 @@ def socloud(cookie_string):
 
 
 if __name__ == "__main__":
-    b64str = sys.argv[1]
-    assert b64str
+    cookie_string = sys.argv[1]
+    assert cookie_string
     
-    # # 编码
-    # message = "Hello, World!"
-    # message_bytes = message.encode()
-    # base64_bytes = base64.b64encode(message_bytes)
-    # base64_message = base64_bytes.decode()
-    # print(base64_message)
-
-    # 解码
-    base64_message = b64str
-    base64_bytes = base64_message.encode()
-    message_bytes = base64.b64decode(base64_bytes)
-    cookie_string = message_bytes.decode()
-    # print(cookie_string)
-
     socloud(cookie_string)
